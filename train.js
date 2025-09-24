@@ -1,13 +1,12 @@
-console.log("Jack Ma maslahatlari");
-const list = [
-  "yaxshi talaba bo'ling", // 0-20
-  "togri boshliq tanlang va koproq harakat qiling", // 20-30
-  "uzingizni ishingizni boshlang", // 30-40
-  "siz kuchli bolgan narsalarni qiling", // 40-50
-  "yoshlarga investitsiya qiling", // 50-60
-  "endi dam oling, foydasi yoq endi", // 60
-];
-
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//   "yaxshi talaba bo'ling", // 0-20
+//   "togri boshliq tanlang va koproq harakat qiling", // 20-30
+//   "uzingizni ishingizni boshlang", // 30-40
+//   "siz kuchli bolgan narsalarni qiling", // 40-50
+//   "yoshlarga investitsiya qiling", // 50-60
+//   "endi dam oling, foydasi yoq endi", // 60
+// ];
 
 // // CALLBACK. function
 // function maslahatBering(a, callback) {
@@ -31,8 +30,6 @@ const list = [
 // });
 // console.log("passed here 1");
 
-
-
 // function maslahatBering(a, callback) {
 //   if (typeof a !== "number") callback("insert a number", null);
 //   else if (a <= 20) callback(null, list[0]);
@@ -53,8 +50,6 @@ const list = [
 //   console.log("Javob:", data);
 // });
 // console.log("passed here 1");
-
-
 
 // ASYNC function
 
@@ -80,7 +75,7 @@ const list = [
 //   }
 // }
 
-// // call via then/catch 
+// // call via then/catch
 // console.log("passed here 0");
 // maslahatBering(20)
 //   .then((data) => {
@@ -102,11 +97,47 @@ const list = [
 // }
 // run();
 
+// function countLetter(letter, word) {
+//     return word.split(letter).length - 1;
+//         }
+// console.log(countLetter("c", "coconout"));
+// console.log(countLetter("n", "banana"));
+// console.log(countLetter("a", "alabama"));
 
+//  ⭐️ Synchronous function vs Asynchronous function
+// Asynchronous: CALLBACK
 
-function countLetter(letter, word) {
-    return word.split(letter).length - 1;
-        }
-console.log(countLetter("c", "coconout"));
-console.log(countLetter("n", "banana"));
-console.log(countLetter("a", "alabama"));
+// // DEFINE
+// function qoldiqliBolish(a, b, callback) {
+//   if (b === 0) {
+//     callback("Mahraj nolga teng bolmaydi", null);
+//   } else {
+//     const c = a % b;
+//     callback(null, c, true);
+//   }
+// }
+
+// // CALL
+// qoldiqliBolish(5, 3, (err, data) => {
+//   if (err) console.log("ERROR:", err);
+//   else {
+//     console.log("data:", data);
+//     console.log("MATIQLAR ...");
+//   }
+// });
+
+function countDigits(str) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] >= "0" && str[i] <= "9") {
+      count++;
+    }
+  }
+  return count;
+}
+
+// Test b
+console.log(countDigits("ad2a54y79wet0sfgb9"));
+console.log(countDigits("hello123world"));
+console.log(countDigits("noNumbersHere"));
+console.log(countDigits("2025year"));
