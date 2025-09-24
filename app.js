@@ -29,7 +29,7 @@ app.set("view engine", "ejs");
 // 4: Routing code
 
 app.post("/create-item", (req, res) => {
-   console.log("user entered /create-item")
+  console.log("user entered /create-item");
   console.log(req.body);
   const new_reja = req.body.reja;
 
@@ -48,7 +48,7 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  console.log("user entered /")
+  console.log("user entered /");
   db.collection("plans")
     .find()
     .toArray((err, data) => {
