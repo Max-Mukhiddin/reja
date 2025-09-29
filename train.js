@@ -23,8 +23,8 @@
 //   }
 // }
 
-// console.log("passed herre 0");
-// maslahatBering(65, (err, data) => {
+// console.log("passed here 0");
+// maslahatBering(40, (err, data) => {
 //   if (err) console.log("ERROR:", err);
 //   console.log("Javob:", data);
 // });
@@ -126,18 +126,33 @@
 //   }
 // });
 
-function countDigits(str) {
-  let count = 0;
-  for (let i = 0; i < str.length; i++) {
-    if (str[i] >= "0" && str[i] <= "9") {
-      count++;
-    }
-  }
-  return count;
+// function countDigits(str) {
+//   let count = 0;
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i] >= "0" && str[i] <= "9") {
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+
+// // Test b
+// console.log(countDigits("ad2a54y79wet0sfgb9"));
+// console.log(countDigits("hello123world"));
+// console.log(countDigits("noNumbersHere"));
+// console.log(countDigits("2025year"));
+
+
+function checkContent(str1, str2) {
+  if (str1.length !== str2.length) return false;
+
+  const sorted1 = str1.split("").sort().join("");
+  const sorted2 = str2.split("").sort().join("");
+
+  return sorted1 === sorted2;
 }
 
-// Test b
-console.log(countDigits("ad2a54y79wet0sfgb9"));
-console.log(countDigits("hello123world"));
-console.log(countDigits("noNumbersHere"));
-console.log(countDigits("2025year"));
+// Test
+console.log(checkContent("mitgroup", "gmtiprou")); 
+console.log(checkContent("hello", "ohlle"));       
+console.log(checkContent("hello", "helo"));       
