@@ -57,13 +57,12 @@ app.post("/edit-item", (req, res) => {
   const data = req.body;
   console.log(data);
   db.collection("plans").findOneAndUpdate(
-    { _id: data.id },
+    { _id: new mongodb.ObjectId(data.id) },
     { $set: { reja: data.new_input } },
     function (err, data) {
-      req.json({ state: "success" });
+      res.json({ state: "success" });
     }
   );
-  res.end("done");
 });
 
 app.post("/delete-all", (req, res) => {
