@@ -157,65 +157,80 @@
 // console.log(checkContent("hello", "helo"));
 
 
+// MIT task D
 
+// const moment = require("moment");
 
-const moment = require("moment");
-
-class Shop {
-  constructor(non, lagmon, cola) {
-    this.products = { non, lagmon, cola };
-  }
+// class Shop {
+//   constructor(non, lagmon, cola) {
+//     this.products = { non, lagmon, cola };
+//   }
 
  
-  getTime() {
-    return moment().format("HH:mm");
-  }
+//   getTime() {
+//     return moment().format("HH:mm");
+//   }
 
-  // qoldiq (async)
-  async qoldiq() {
-    const time = this.getTime();
-    console.log(
-      `hozir ${time}da ${this.products.non}ta non, ${this.products.lagmon}ta lagmon va ${this.products.cola}ta cola mavjud!`
-    );
-  }
+//   // qoldiq (async)
+//   async qoldiq() {
+//     const time = this.getTime();
+//     console.log(
+//       `hozir ${time}da ${this.products.non}ta non, ${this.products.lagmon}ta lagmon va ${this.products.cola}ta cola mavjud!`
+//     );
+//   }
 
-  // sotish (async)
-  async sotish(mahsulot, soni) {
-    if (!this.products[mahsulot]) {
-      console.log("Bunday mahsulot yo‘q!");
-      return;
-    }
-    if (this.products[mahsulot] < soni) {
-      console.log("Yetarli mahsulot yo‘q!");
-      return;
-    }
-    this.products[mahsulot] -= soni;
-    console.log(
-      `hozir ${this.getTime()}da ${soni}ta ${mahsulot} sotildi!`
-    );
-  }
+//   // sotish (async)
+//   async sotish(mahsulot, soni) {
+//     if (!this.products[mahsulot]) {
+//       console.log("Bunday mahsulot yo‘q!");
+//       return;
+//     }
+//     if (this.products[mahsulot] < soni) {
+//       console.log("Yetarli mahsulot yo‘q!");
+//       return;
+//     }
+//     this.products[mahsulot] -= soni;
+//     console.log(
+//       `hozir ${this.getTime()}da ${soni}ta ${mahsulot} sotildi!`
+//     );
+//   }
 
-  // qabul (async)
-  async qabul(mahsulot, soni) {
-    if (!this.products[mahsulot]) {
-      console.log("Bunday mahsulot yo‘q!");
-      return;
-    }
-    this.products[mahsulot] += soni;
-    console.log(
-      `hozir ${this.getTime()}da ${soni}ta ${mahsulot} qabul qilindi!`
-    );
-  }
+//   // qabul (async)
+//   async qabul(mahsulot, soni) {
+//     if (!this.products[mahsulot]) {
+//       console.log("Bunday mahsulot yo‘q!");
+//       return;
+//     }
+//     this.products[mahsulot] += soni;
+//     console.log(
+//       `hozir ${this.getTime()}da ${soni}ta ${mahsulot} qabul qilindi!`
+//     );
+//   }
+// }
+
+// // Test qilish async/await bilan
+// async function runShop() {
+//   const shop = new Shop(4, 5, 2);
+
+//   await shop.qoldiq();          // hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+//   await shop.sotish("non", 3);  // hozir 20:41da 3ta non sotildi!
+//   await shop.qabul("cola", 4);  // hozir 20:42da 4ta cola qabul qilindi!
+//   await shop.qoldiq();          // hozir 20:42da 1ta non, 5ta lagmon va 6ta cola mavjud!
+// }
+
+// runShop();
+
+
+
+
+
+// MIT task E
+
+
+function getReverse(str) {
+  return str.split("").reverse().join("");
 }
 
-// Test qilish async/await bilan
-async function runShop() {
-  const shop = new Shop(4, 5, 2);
-
-  await shop.qoldiq();          // hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
-  await shop.sotish("non", 3);  // hozir 20:41da 3ta non sotildi!
-  await shop.qabul("cola", 4);  // hozir 20:42da 4ta cola qabul qilindi!
-  await shop.qoldiq();          // hozir 20:42da 1ta non, 5ta lagmon va 6ta cola mavjud!
-}
-
-runShop();
+// Test:
+console.log(getReverse("hello")); // "olleh"
+console.log(getReverse("salom")); // "molas"
