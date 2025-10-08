@@ -224,13 +224,37 @@
 
 
 
-// MIT task E
+// // MIT task E
 
 
-function getReverse(str) {
-  return str.split("").reverse().join("");
+// function getReverse(str) {
+//   return str.split("").reverse().join("");
+// }
+
+// // Test:
+// console.log(getReverse("hello")); // "olleh"
+// console.log(getReverse("salom")); // "molas"
+
+
+
+
+
+
+
+function findDoublers(str) {
+  const seen = new Set();
+  
+  for (let char of str) {
+    if (seen.has(char)) {
+      return true; 
+    }
+    seen.add(char);
+  }
+
+  return false; 
 }
 
 // Test:
-console.log(getReverse("hello")); // "olleh"
-console.log(getReverse("salom")); // "molas"
+console.log(findDoublers("hello")); // true 
+console.log(findDoublers("world")); // false
+console.log(findDoublers("apple")); // true 
